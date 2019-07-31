@@ -1,6 +1,7 @@
 #include <cs50.h>
 #include <stdio.h>
 #include <stdlib.h>
+//include these librarys for buttom loops
 #include <ctype.h>
 #include <string.h>
 
