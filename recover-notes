@@ -1,0 +1,22 @@
+Notes for Recover
+
+jpegs are stored back to back
+all jpegs begins with the same bits
+
+open card.raw
+read in bytes from card.raw
+- and if bytes = the particular jpeg bits then we have found the header
+
+if we found the first jpeg file, do something
+{
+found first jpeg
+read in the bytes into new file
+
+
+}
+
+ else close it 
+ 
+ else if continue reading
+ 
+ since we fopened we need to close everything at the end, no memory leaks either
