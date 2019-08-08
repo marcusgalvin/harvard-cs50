@@ -43,5 +43,5 @@ int main(void)
     coins++;
   }
 
-  printf("%i\n", coins);
+  printf("minimum coins owed: %i\n", coins);
 }
