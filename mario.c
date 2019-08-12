@@ -8,12 +8,13 @@ int main(void)
 
   do
   {
-    //promt user for a number
+    //promt user for a number (height)
     n = get_int("please enter a number: ");
   }
   //make sure the user can only pick a number from 0-23, if not ask again
   while (n < 0 || n > 23);
 
+  //n = height
   for (int rows = 0; rows < n; rows++)
   {
     for (int j = 0; j < n; j++)
