@@ -18,5 +18,6 @@ read in the bytes into new file
  else close it 
  
  else if continue reading
+ possibly
  
  since we fopened we need to close everything at the end, no memory leaks either
