@@ -1,7 +1,7 @@
 Notes for Recover
 
 jpegs are stored back to back
-all jpegs begins with the same bits
+all jpegs begins with the same , header
 
 open card.raw
 read in bytes from card.raw
@@ -15,9 +15,16 @@ read in the bytes into new file
 
 }
 
- else close it 
- 
+ else close it
+
  else if continue reading
- possibly
- 
+
  since we fopened we need to close everything at the end, no memory leaks either
+
+
+if JPEG found use sprintf
+then fopen
+
+then fwrite(data, size, number, outptr) outptr is new image we create
+
+then we have to stop reading
