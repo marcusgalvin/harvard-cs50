@@ -1,4 +1,4 @@
-// Copies a BMP file
+// the directions of this p set are to Copy a bit map file
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -7,17 +7,17 @@
 
 int main(int argc, char *argv[])
 {
-  // ensure proper usage
+  // ensure proper amt of arguments
   if (argc != 4)
   {
     fprintf(stderr, "Usage: resize n infile outfile\n");
     return 1;
   }
 
-  // remember size multiplier
+  // remember size multiplier, atoi convert string to int
   int n = atoi(argv[1]);
 
-  // remember filenames
+  // remember filenames, save as a variable char*
   char *infile = argv[2];
   char *outfile = argv[3];
 
@@ -25,6 +25,7 @@ int main(int argc, char *argv[])
   FILE *inptr = fopen(infile, "r");
   if (inptr == NULL)
   {
+    //if cannot open then print below message
     fprintf(stderr, "Could not open %s.\n", infile);
     return 2;
   }
@@ -58,7 +59,7 @@ int main(int argc, char *argv[])
 
   //code starts to change after this line
 
-  // assign vars to width/height
+  // assign vars to width/height to figure out dimensions
   int widthOld = bi.biWidth;
   int heightOld = bi.biHeight;
   int widthNew = widthOld * n;
@@ -68,7 +69,7 @@ int main(int argc, char *argv[])
   int inPadding = (4 - (widthOld * sizeof(RGBTRIPLE)) % 4) % 4;
   int outPadding = (4 - (widthNew * sizeof(RGBTRIPLE)) % 4) % 4;
 
-  // re assign headers
+  // re assign and re config headers
   bi.biHeight = heightNew;
   bi.biWidth = widthNew;
   bi.biSizeImage = ((sizeof(RGBTRIPLE) * widthNew) + outPadding) * abs(heightNew);
