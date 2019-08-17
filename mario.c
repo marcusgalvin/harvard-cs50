@@ -4,22 +4,22 @@
 int main(void)
 {
 
-  int n;
+  int height;
 
   do
   {
     //promt user for a number (height)
-    n = get_int("please enter a number: ");
+    height = get_int("please enter a number: ");
   }
   //make sure the user can only pick a number from 0-23, if not ask again
-  while (n < 0 || n > 23);
+  while (height < 0 || height > 23);
 
   //n = height
-  for (int rows = 0; rows < n; rows++)
+  for (int rows = 0; rows < height; rows++)
   {
-    for (int j = 0; j < n; j++)
+    for (int j = 0; j < height; j++)
     {
-      if (rows + j >= n - 1)
+      if (rows + j >= height - 1)
         printf("#");
       else
         printf(" ");
